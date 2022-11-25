@@ -33,8 +33,6 @@ public class problems1 {
                                                  }
                         System.out.println("Enter  number  " + (i + 1) + ":");
                             a[i] = sc.nextInt();
-                                
-                                // FK MEEE DADDI~ // 
                             sum += a[i];
                             i++;
                             }
