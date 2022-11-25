@@ -82,7 +82,7 @@ public static void indexloop(){
 public static void index1(){
     Scanner sc = new Scanner(System.in);
     String lineBreak = System.getProperty("line.separator");
-    problems run = new problems();   
+    problems1 run = new problems1();   
 
         Logger.s("PAGE","TWO" + "\n");
             
