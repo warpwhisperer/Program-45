@@ -350,38 +350,43 @@ public class problems3 {
                 }//this encloses the code block itself.
     
     public void num8(){
-
-        while(done==false) {
+        Scanner sc = new Scanner(System.in);
+        String[] arr = {"Initial miles", "Final Miles", "Gallons refilled"};
+        double[] input = new double[3];
+                while(done==false) {
                     
-        System.out.println("Proceed?" + "\n" + "Press 1 for yes. Press 2 to return to the Index.");
-            String answer = read.nextLine();
-                switch (answer){
+                    System.out.println("\n" + "You have chosen 'Miles per Gallon'. Proceed?" + "\n" + "Press 1 for yes. Press 2 to return to the Index.");
+                    String answer = read.nextLine();
+                    switch (answer) {
                         
-                case "1" -> {                       
-                        int numTerms, sum = 0, i = 0;
-                        Scanner sc = new Scanner(System.in);
+                        case "1" -> {
                             
-                        System.out.println("Enter the number of values to be added: ");
-                        if(sc.hasNextInt()){
-                            numTerms = sc.nextInt();
-                            int a[] = new int[numTerms];
-                            
-                        System.out.println("Enter the " + numTerms + " numbers ");
-
-                            while (i < numTerms) {
-                                if(!sc.hasNextInt()){
-                                    System.out.println("That is an Invalid Value!");
-                                    break;                                
-                                                 }
-                        System.out.println("Enter  number  " + (i + 1) + ":");
-                            a[i] = sc.nextInt();
-                            sum += a[i];
-                            i++;
+                        for(int i =0; i!=3; i++){
+                            System.out.print(arr[i] + ": ");
+                            if(!sc.hasNextDouble()){
+                                System.out.println("That is an Invalid Value!");
+                                break;
+                                //index.indexloop();
+                                }
+                            input[i] = sc.nextDouble();
+                                if(input[i]<0){
+                                System.out.println(input[i] + "bye.");
+                                break;
+                                }
+                            double milesTravelled = (input[1]-input[0]);
+                            double milesperGallon = milesTravelled/input[2];
+                            switch(arr[i]){
+                                case "Final Miles" -> {
+                                System.out.println("The total distance travelled is:  " + milesTravelled);    
+                                }
+                                case "Gallons refilled" -> {
+                System.out.println("The total amount of fuel you have in the tank is:  " + input[2]); 
+                System.out.print("Miles per Gallon: " + milesperGallon + "\n");
+                                                            }
+                                            }                        
+                        }
+                                
                             }
-                              }
-                            System.out.println("sum is =" + sum);
-                        
-                             }
                         
                 case "2" -> {
                             
