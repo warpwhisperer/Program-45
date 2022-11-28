@@ -252,38 +252,44 @@ public class problems1 {
                 }//this encloses the code block itself.
     
     public void num6(){
-
+        Scanner sc = new Scanner(System.in);
+        String[] arr = {"capacity", "gauge", "miles per gallon"};
+        int[] input = new int[3];
         while(done==false) {
                     
-        System.out.println("Proceed?" + "\n" + "Press 1 for yes. Press 2 to return to the Index.");
+        System.out.println("\n" + "You have chosen 'Last Chance Gas'. Proceed?" + "\n" + "Press 1 for yes. Press 2 to return to the Index.");
             String answer = read.nextLine();
                 switch (answer){
                         
                 case "1" -> {                       
-                        int numTerms, sum = 0, i = 0;
-                        Scanner sc = new Scanner(System.in);
-                            
-                        System.out.println("Enter the number of values to be added: ");
-                        if(sc.hasNextInt()){
-                            numTerms = sc.nextInt();
-                            int a[] = new int[numTerms];
-                            
-                        System.out.println("Enter the " + numTerms + " numbers ");
+                    
+                    
+                    for (int i = 0; i!=3; i++){
+                            System.out.print("Input tank " + arr[i] + ": ");
+                            if(!sc.hasNextInt()){
+                                System.out.println("That is an Invalid Value!");
+                                done=true;
+                                index.index1();
+                                }
+                            input[i] = sc.nextInt();
+                            double fuel = (input[0]*(input[1]/100.0));
+                            int calc = (int)(fuel*(input[2]));
+                            switch(arr[i]){
+                                case "gauge" -> {
+                                System.out.println("The total amount of fuel you have in the tank is:  " + (int)fuel);    
+                                }
+                                case "miles per gallon" -> {
 
-                            while (i < numTerms) {
-                                if(!sc.hasNextInt()){
-                                    System.out.println("That is an Invalid Value!");
-                                    break;                                
-                                                 }
-                        System.out.println("Enter  number  " + (i + 1) + ":");
-                            a[i] = sc.nextInt();
-                            sum += a[i];
-                            i++;
+                System.out.print("The distance you will be able to traverse by car is: " + calc + "\n" + "Verdict: ");
+                            if(calc>=200){
+                                System.out.println("SAFE!");
+                                        } else {
+                                System.out.println("GET GAS!");
+                                    }
+                                                            }
+                                            }
+                                                }
                             }
-                              }
-                            System.out.println("sum is =" + sum);
-                        
-                             }
                         
                 case "2" -> {
                             
